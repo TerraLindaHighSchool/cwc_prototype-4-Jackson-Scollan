@@ -28,6 +28,12 @@ public class PlayerController : MonoBehaviour
         playerRb.AddForce(focalPoint.transform.forward * forwardInput * speed);
 
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
+
+        if(transform.position.y < -10) 
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
